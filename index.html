@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="myButton">?X?</button>
+    <div id="grid-container"></div>
+
+<script>
+  // Get the grid container
+  const gridContainer = document.getElementById('grid-container');
+  const myButton = document.getElementById('myButton')
+  myButton.addEventListener('click', function(){
+    gridContainer.innerHTML = ""
+    const userInput = prompt('Please enter the sides:')
+    let divOpacity = 0
+    if (userInput < 100){
+    for (let i = 0; i < userInput; i++) {
+    for (let j = 0; j < userInput; j++) {
+      // Create a div element for each cell
+      const cell = document.createElement('div');
+      cell.classList.add('cell');
+
+      
+      // Add event listener for changing cell color on click
+      cell.addEventListener('mouseenter', function() {
+        if (this.style.backgroundColor === 'white') {
+          this.style.backgroundColor = 'black';
+        } else {
+          this.style.backgroundColor = 'white';
+        }
+      });
+
+      
+      // Append the cell to the grid container
+      gridContainer.appendChild(cell);
+    }
+    
+    // Add line break after each row
+    gridContainer.appendChild(document.createElement('br'));
+    } 
+}else {alert("cant input number higher than 100");}})
+  // Create 16x16 grid
+  for (let i = 0; i < 16; i++) {
+    for (let j = 0; j < 16; j++) {
+      // Create a div element for each cell
+      const cell = document.createElement('div');
+      cell.classList.add('cell');
+      
+      // Add event listener for changing cell color on click
+      cell.addEventListener('mouseenter', function() {
+        if (this.style.backgroundColor === 'white') {
+          this.style.backgroundColor = 'black';
+        } else {
+          this.style.backgroundColor = 'white';
+        }
+      });
+      
+      // Append the cell to the grid container
+      gridContainer.appendChild(cell);
+    }
+    
+    // Add line break after each row
+    gridContainer.appendChild(document.createElement('br'));
+  }
+</script>
+    
+</body>
+</html>

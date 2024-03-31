@@ -1,0 +1,7 @@
+.cell {
+    width: 30px; /* Adjust according to your preference */
+    height: 30px; /* Adjust according to your preference */
+    background-color: white;
+    border: 1px solid black;
+    display: inline-block; 
+}
